@@ -15,7 +15,6 @@ namespace _18.RemoveAndSortTheMinNumber
             //List<int> arr = new List<int>() { 0, 6, 1, 4, 3, 0, 3, 6, 4, 5 };
             //List<int> arr = new List<int>() { 6, 1, 4, 3, 0, 3, 6, 4, 5 };
 
-
             Console.Write("Please enter the size of the array: ");
             int size = int.Parse(Console.ReadLine());
             List<int> arr = new List<int>();
@@ -26,16 +25,13 @@ namespace _18.RemoveAndSortTheMinNumber
                 arr.Add(int.Parse(Console.ReadLine()));
             }
 
-
             SortAndReturn(arr);
 
             Console.WriteLine();
         }
-
         static void SortAndReturn(List<int> arr)
         {
             List<int> newArr = new List<int>(arr);
-            int count = 0;
 
             for (int i = 0; i < newArr.Count - 1; i++)
             {
@@ -43,17 +39,14 @@ namespace _18.RemoveAndSortTheMinNumber
                 {
                     newArr.RemoveAt(i + 1);
                     i = -1;
-                    count++;
                 }
                 else if ((newArr[i] > newArr[i + 1]) || newArr[i] < 1)
                 {
                     newArr.RemoveAt(i);
                     i = -1;
-                    count++;
                 }
             }
             Console.WriteLine("Result: " + string.Join(", ", newArr));
         }
-
     }
 }
